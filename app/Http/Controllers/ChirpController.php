@@ -21,7 +21,12 @@ class ChirpController extends Controller
     {
         // Validate the request
         $validated = $request->validate([
-            'message' => 'required|string|max:255',
+
+
+            'message' => 'required|string|max:30',
+        ], [
+            'message.required' => 'このフィールドは必須です。',
+            'message.max' => '30文字以内で入力してください。',
         ]);
 
         // Create the chirp (no user for now - we'll add auth later)
