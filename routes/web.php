@@ -3,15 +3,12 @@
 use Illuminate\Support\Facades\Route;
 use Laravel\Fortify\Features;
 use App\Http\Controllers\ChirpController;
-<<<<<<< Updated upstream
-=======
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\CartController;
->>>>>>> Stashed changes
 
-Route::inertia('/', 'welcome', [
-    'canRegister' => Features::enabled(Features::registration()),
-])->name('home');
+// Route::inertia('/', 'welcome', [
+//     'canRegister' => Features::enabled(Features::registration()),
+// ])->name('home');
 
 Route::middleware(['auth', 'verified'])->group(function () {
     Route::inertia('dashboard', 'dashboard')->name('dashboard');
@@ -23,8 +20,6 @@ Route::get(
     '/chirps',
     [ChirpController::class, 'index']
 );
-<<<<<<< Updated upstream
-=======
 Route::post(
     '/chirps',
     [ChirpController::class, 'store']
@@ -47,4 +42,3 @@ Route::get(
     '/cart/clear',
     [CartController::class, 'clear']
 );
->>>>>>> Stashed changes
