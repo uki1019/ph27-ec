@@ -32,6 +32,6 @@
                 <p>{!! $item->content !!}</p>
             </div>
         @endforeach
-@endif
+    @endif
     @endforeach
 @endsection
