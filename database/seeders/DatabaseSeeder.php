@@ -21,6 +21,7 @@ class DatabaseSeeder extends Seeder
         //     'email' => 'test@example.com',
         // ]);
         // $this->call(ChirpSeeder::class);
+        $this->call(CategorySeeder::class);
         $this->call(ProductSeeder::class);
 
         $user = new User();
@@ -31,8 +32,8 @@ class DatabaseSeeder extends Seeder
 
         $this->call(OrderSeeder::class);
 
-         $this->call([
-        NewsSeeder::class,
-    ]);
+        $this->call([
+            NewsSeeder::class,
+        ]);
     }
 }
