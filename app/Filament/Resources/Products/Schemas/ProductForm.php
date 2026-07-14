@@ -19,12 +19,18 @@ class ProductForm
                     ->required()
                     ->numeric()
                     ->prefix('$'),
+                TextInput::make('stock')
+                    ->required()
+                    ->numeric(),
                 Textarea::make('description')
                     ->required()
                     ->columnSpanFull(),
                 FileUpload::make('image')
                     ->image()
-                    ->required(),
+                    ->required()
+                    ->disk('public')
+                    ->directory('images/products')
+                    ->visibility('public'),
             ]);
     }
 }

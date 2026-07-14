@@ -1,25 +1,19 @@
 <?php
 
-namespace App\Filament\Resources\Products\Schemas;
+namespace App\Filament\Resources\News\Schemas;
 
-use Filament\Infolists\Components\ImageEntry;
 use Filament\Infolists\Components\TextEntry;
 use Filament\Schemas\Schema;
 
-class ProductInfolist
+class NewsInfolist
 {
     public static function configure(Schema $schema): Schema
     {
         return $schema
             ->components([
-                TextEntry::make('name'),
-                TextEntry::make('price')
-                    ->money(),
-                TextEntry::make('stock'),
-                TextEntry::make('description')
+                TextEntry::make('title'),
+                TextEntry::make('content')
                     ->columnSpanFull(),
-                ImageEntry::make('image')
-                    ->disk('public'),
                 TextEntry::make('created_at')
                     ->dateTime()
                     ->placeholder('-'),
